@@ -1,13 +1,12 @@
 #!name=All In One
 #!desc=Được tổng hợp bởi Nguyễn Mạnh Hùng
-#!author=mahnhuwg
-#!homepage=https://github.com/Belahung31/Locket_ManhHung
-#!tgchannel=https://www.instagram.com/mahn.huwg/
-#!configUrl=https://raw.githubusercontent.com/Belahung31/Locket_ManhHung/refs/heads/main/modules/All_In_One.conf
-#!icon=https://belahung31.github.io/Locket_ManhHung/assets/img/shadowrocket.webp
+#!author=duyvinh09
+#!homepage=https://module-ios.netlify.app
+#!tgchannel=https://t.me/tienich
+#!moduleUrl=https://raw.githubusercontent.com/Belahung31/Locket_ManhHung/refs/heads/main/modules/All_In_One.sgmodule
+#!icon=https://module-ios.netlify.app/assets/img/shadowrocket.webp
 #!howtouse=Shadowrocket
 #Shadowrocket Configuration - All IN ONE
-
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
@@ -29,6 +28,7 @@ http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:4
 
 # General Video Ad request
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
+
 [Script]
 #SpotifyPremium
 #hostname = spclient.wg.spotify.com
