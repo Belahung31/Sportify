@@ -2,9 +2,9 @@
 #!desc=Được tổng hợp bởi Nguyễn Mạnh Hùng
 #!author=mahnhuwg
 #!homepage=https://github.com/Belahung31/Locket_ManhHung
-#!tgchannel=https://t.me/tienich
+#!tgchannel=https://www.instagram.com/mahn.huwg/
 #!configUrl=https://raw.githubusercontent.com/Belahung31/Locket_ManhHung/refs/heads/main/modules/All_In_One.conf
-#!icon=https://module-ios.netlify.app/assets/img/shadowrocket.webp
+#!icon=https://belahung31.github.io/Locket_ManhHung/assets/img/shadowrocket.webp
 #!howtouse=Shadowrocket
 #Shadowrocket Configuration - All IN ONE
 
@@ -35,22 +35,8 @@ http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:4
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
 
 [Script]
-
-#Sub-Store
-#hostname = sub.store
-Sub-Store Core=type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js,requires-body=true,timeout=120
-Sub-Store Simple=type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js,requires-body=true
-Sub-Store Sync=type=cron,cronexp=0 0 * * *,wake-system=1,timeout=120,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js
-#************************************#
-
-#Youtube Premium (Search|Play Page|Short Video ||| PiP|Background Play)
-#hostname = *.googlevideo.com, youtubei.googleapis.com
-youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=jsc,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/youtube.response.js
-youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,engine={{{script}}},script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/youtube.response.js,argument="{"lyricLang":"vi","captionLang":"vi","blockUpload":true,"blockImmersive":true,"debug":false}"
-#************************************#
-
 #SpotifyPremium
 #hostname = spclient.wg.spotify.com
-spotify-json = type=http-request,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-json.js
-spotify-proto = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-proto.js,script-update-interval=0
+spotify-json = type=http-request,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/Belahung31/Sportify/refs/heads/main/js/spotify-json
+spotify-proto = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/Belahung31/Sportify/refs/heads/main/js/spotify-proto,script-update-interval=0
 #************************************#
